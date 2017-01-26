@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button color="white" menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-toolbar>
+      <ion-searchbar (ionInput)="getItems($event)" [autocomplete]="on" [showCancelButton]="true">
+      </ion-searchbar>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="grid-basic-page">
+
+  <ion-row center>
+    <ion-col width-50><div>
+    <ion-card>
+
+  <img src="img/card-amsterdam.png">
+<p>Tour Saint-Jacques</p>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>90</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>35</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</div></ion-col>
+    <ion-col width-50><div>
+    <ion-card>
+
+  <img src="img/card-sf.png">
+  <p>Hôtel de Ville</p>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>122</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>51</div>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+</div></ion-col>
+  </ion-row>
+
+</ion-content>
