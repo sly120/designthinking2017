@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Locations } from '../../providers/locations';
+import { GoogleMaps } from '../../providers/google-maps';
+import { NavController, Platform } from 'ionic-angular';
 
 
 @Component({
@@ -6,13 +9,27 @@ import { Component } from '@angular/core';
   templateUrl: 'accueil.html'
 })
 export class Accueil {
-
+	@ViewChild('map') mapElement: ElementRef;
+	@ViewChild('pleaseConnect') pleaseConnect: ElementRef;
+ 
+	constructor(public navCtrl: NavController, public maps: GoogleMaps, public platform: Platform, public locations: Locations) {
+ 
+  }
+ 
+	ionViewDidLoad(){
+ 
+    this.platform.ready().then(() => {
+ 
+        let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
+ 
+    });
+ 
+  }
+  
   searchQuery: string = '';
   items: string[];
 
-  constructor() {
-   this.initializeItems();
-  }
+
 
   initializeItems() {
     this.items = [

@@ -8,6 +8,9 @@ import { Accueil } from '../pages/accueil/accueil';
 import { Adresses } from '../pages/adresses/adresses';
 import { Favoris } from '../pages/favoris/favoris';
 import { Balades } from '../pages/balades/balades';
+import { Locations } from '../providers/locations';
+import { GoogleMaps } from '../providers/google-maps';
+import { Connectivity } from '../providers/connectivity';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,6 @@ import { Balades } from '../pages/balades/balades';
     ItemDetailsPage,
     ListPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Locations, GoogleMaps, Connectivity]
 })
 export class AppModule {}
